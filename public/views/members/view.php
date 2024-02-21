@@ -11,7 +11,15 @@
 
     <div class="main-content-container">
         <main class="main-content">
-
+            <div class="searchbar-container">
+                <form action="">
+                    <div>
+                        <label for="searchbar">Name</label>
+                    </div>
+                    <input type="text" name="memberSearch" id="searchbar" placeholder="Enter members name..."/>
+                    <input type="button" value="Search" type="submit" id="search-button-input" />
+                </form>
+            </div>
         </main>
         <?php include "../../includes/membersSidebar.php" ?>
     </div>
