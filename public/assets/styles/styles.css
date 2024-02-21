@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    border: 1px solid red;
 }
 
 body {
@@ -11,14 +12,21 @@ body {
     color: #c9d1d9;
 }
 
+:root {
+    --button-bg-color: #58a6ff;
+    --button-text-color: #0d1117;
+    --highlighted-link-color: #58a6ff;
+}
+
 /* Just testing layout DELETE WHEN DONE */
 .main-content {
-    border: 1px solid green; 
     flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar {
-    border: 1px solid red;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -37,7 +45,7 @@ body {
 
 .sidebar-item:hover {
     cursor: pointer;
-    color: #58a6ff;
+    color: var(--highlighted-link-color);
 }
 
 .main-content-container {
@@ -72,4 +80,42 @@ body {
 .nav-item:hover {
     cursor: pointer;
     color: #58a6ff;
+}
+
+.searchbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 50%;
+}
+
+.searchbar-container > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+}
+
+#searchbar {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    color: #c9d1d9;
+    width: 60%;
+}
+
+#search-button-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    color: #c9d1d9;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 20%;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
 }
