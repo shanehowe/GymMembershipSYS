@@ -4,7 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    border: 1px solid red;
+}
+
+:root {
+    --button-bg-color: #58a6ff;
+    --button-text-color: #0d1117;
+    --highlighted-link-color: #58a6ff;
 }
 
 body {
@@ -12,10 +17,20 @@ body {
     color: #c9d1d9;
 }
 
-:root {
-    --button-bg-color: #58a6ff;
-    --button-text-color: #0d1117;
-    --highlighted-link-color: #58a6ff;
+table {
+    border-collapse: collapse;
+    width: 85%;
+    border: 1px solid #30363d;
+}
+
+thead {
+  background-color: #58a6ff;
+    color: #0d1117;
+}
+
+th, td {
+  border: 1px solid #30363d;
+  padding: 8px 10px;
 }
 
 /* Just testing layout DELETE WHEN DONE */
@@ -31,7 +46,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
+    border-right: 1px solid #30363d;
+    height: 100vh;
 }
 
 .sidebar-item, .sidebar-item-heading {
@@ -118,4 +134,11 @@ body {
     width: 20%;
     background: var(--button-bg-color);
     color: var(--button-text-color);
+}
+
+.members-table-container {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
