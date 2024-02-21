@@ -1,0 +1,75 @@
+/* Reset default css for browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+/* Just testing layout DELETE WHEN DONE */
+.main-content {
+    border: 1px solid green; 
+    flex: 4;
+}
+
+.sidebar {
+    border: 1px solid red;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+}
+
+.sidebar-item, .sidebar-item-heading {
+    padding: 20px 0;
+    color: #c9d1d9;
+    text-decoration: none;
+    border-bottom: 1px solid #30363d;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-item:hover {
+    cursor: pointer;
+    color: #58a6ff;
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #30363d;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+.navbar-elements {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.nav-item {
+    color: #c9d1d9;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    color: #58a6ff;
+}
