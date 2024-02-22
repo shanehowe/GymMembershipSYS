@@ -39,7 +39,7 @@
             <div class="searchbar-container">
                 <form action="">
                     <div>
-                        <label for="searchbar">Name</label>
+                        <label for="searchbar">Search Members</label>
                     </div>
                     <input type="text" name="memberSearch" id="searchbar" placeholder="Enter members name..." />
                     <input type="button" value="Search" type="submit" id="search-button-input" />
