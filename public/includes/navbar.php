@@ -1,4 +1,4 @@
-<?php include "../../../config.php"; ?>
+<?php include_once "../../../config.php"; ?>
 
 <div class="navbar-container">
     <div class="navbar-brand">
