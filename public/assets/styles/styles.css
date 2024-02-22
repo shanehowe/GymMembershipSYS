@@ -10,10 +10,23 @@
     --button-bg-color: #58a6ff;
     --button-text-color: #0d1117;
     --highlighted-link-color: #58a6ff;
+    --link-visited: #c9d1d9;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--highlighted-link-color) !important;
+}
+
+a:visited {
+    color: var(--link-visited);
 }
 
 body {
-    background-color: #0d1117;
+    background-color: #151c27;
     color: #c9d1d9;
 }
 
@@ -33,12 +46,44 @@ th, td {
   padding: 8px 10px;
 }
 
+form {
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    padding: 20px;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-input {
+    width: 90%;
+    border-radius: 7px;
+    padding: 3px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+}
+
+.input-container {
+    border: 1px solid red;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 9px 0;
+}
+
+.input-container > input {
+    width: 100%;
+}
+
 /* Just testing layout DELETE WHEN DONE */
 .main-content {
     flex: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 .sidebar {
@@ -57,11 +102,6 @@ th, td {
     border-bottom: 1px solid #30363d;
     width: 100%;
     text-align: center;
-}
-
-.sidebar-item:hover {
-    cursor: pointer;
-    color: var(--highlighted-link-color);
 }
 
 .main-content-container {
