@@ -8,7 +8,7 @@
     <title>View Members</title>
 
     <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/utils/database.php"
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/services/member_service.php"
     ?>
 </head>
 
