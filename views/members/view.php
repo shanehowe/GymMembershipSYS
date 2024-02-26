@@ -6,33 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/styles/styles.css">
     <title>View Members</title>
-    <?php require_once "../../../envParser.php" ?>
 
     <?php
-    function getMembers()
-    {
-        $db_username = $_ENV["DB_USERNAME"];
-        $db_host = $_ENV["DB_HOST"];
-        $db_name = $_ENV["DB_NAME"];
-
-        $pdo = new PDO('mysql:host=' . $db_host . ';dbname=' . $db_name, $db_username, '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $result = $pdo->query("SELECT * FROM members");
-        while ($row = $result->fetch()) {
-            echo "<tr>";
-            echo "<td>" . $row["memberid"] . "</td>";
-            echo "<td>" . $row["FirstName"] . "</td>";
-            echo "<td>" . $row["LastName"] . "</td>";
-            echo "<td>" . $row["Status"] . "</td>";
-            echo "</tr>";
-        }
-    }
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/utils/database.php"
     ?>
 </head>
 
 <body>
-    <?php include "../../includes/navbar.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/navbar.php"; ?>
 
     <div class="main-content-container">
         <main class="main-content">
@@ -62,7 +43,7 @@
                 </table>
             </section>
         </main>
-        <?php include "../../includes/membersSidebar.php" ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/membersSidebar.php" ?>
     </div>
 </body>
 

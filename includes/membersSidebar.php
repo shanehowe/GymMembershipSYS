@@ -1,4 +1,4 @@
-<?php include_once "../../../config.php"; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']. "/config.php"; ?>
 
 <aside class="sidebar">
     <div class="sidebar-item-heading">
