@@ -84,6 +84,28 @@ form {
     width: 90%;
 }
 
+#dob-picker {
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: var(--button-text-color);
+    cursor: pointer;
+}
+
+.form-error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    padding: 20px 0;
+    background-color: #6d0101;
+    color: #c9d1d9;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 .action-button-container {
     display: flex;
     justify-content: center;
@@ -110,7 +132,6 @@ form {
     font-size: medium
 }
 
-/* Just testing layout DELETE WHEN DONE */
 .main-content {
     flex: 4;
     display: flex;
