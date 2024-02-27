@@ -1,12 +1,18 @@
 <div class="main-content-container">
     <main class="main-content">
         <?php if (strlen($formError) > 0): ?>
-            <div class="form-error-container">
+            <div class="form-error-container notification-container">
                 <p><?php echo $formError; ?></p>
             </div>
         <?php endif; ?>
+
+        <?php if (strlen($formSuccess) > 0): ?>
+            <div class="form-success-container notification-container">
+                <p><?php echo $formSuccess; ?></p>
+            </div>
+        <?php endif; ?>
         <h3>Add Member</h3>
-        <form action="" method="post">
+        <form action="add.php" method="post">
             <div class="input-container">
                 <div class="input-inside-container">
                     <div>
