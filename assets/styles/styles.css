@@ -94,12 +94,19 @@ form {
 }
 
 .form-error-container {
+    background-color: #6d0101;
+}
+
+.form-success-container {
+    background-color: #0d6e0d;
+}
+
+.notification-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 66%;
     padding: 20px 0;
-    background-color: #6d0101;
     color: #c9d1d9;
     border-radius: 5px;
     font-size: 18px;
