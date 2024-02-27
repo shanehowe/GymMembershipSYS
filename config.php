@@ -1,4 +1,4 @@
-<?php 
+<?php
 
-define("BASE_URL", "http://localhost:3000/");
-define('ROOT_DIR', __DIR__);
+const BASE_URL = "http://localhost:3000/";
+const ROOT_DIR = __DIR__;
