@@ -9,6 +9,7 @@ $email = "";
 $phone = "";
 $membershipType = "";
 $formError = "";
+$formSuccess = "";
 
 if (isset($_POST['submitMember'])) {
     $firstName = $_POST['firstName'];
@@ -31,13 +32,18 @@ if (isset($_POST['submitMember'])) {
     } else {
         try {
             insertMember($firstName, $lastName, $email, $phone, $membershipType);
-            header("Location: /views/members/view.php");
             $formError = "";
+            $formSuccess = "Member added successfully";
+            $firstName = "";
+            $lastName = "";
+            $email = "";
+            $phone = "";
+            $membershipType = "";
         } catch (Exception $e) {
             $formError = "An error occurred while adding the member";
         }
     }
-   
+
 }
 
 $root = $_SERVER['DOCUMENT_ROOT'];
