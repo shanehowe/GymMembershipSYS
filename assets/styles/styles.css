@@ -1,4 +1,3 @@
-/* Reset default css for browsers */
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +45,7 @@ th, td {
   padding: 8px 10px;
 }
 
-form {
+#add-member-form {
     border-radius: 10px;
     border: 1px solid #30363d;
     padding: 20px;
@@ -59,10 +58,12 @@ form {
 .text-input {
     width: 90%;
     border-radius: 7px;
-    padding: 3px;
+    padding: 8px;
     height: 30px;
     border: none;
     font-size: 18px;
+    background-color: #b0bdcf;
+    color: #0d1117;
 }
 
 .input-container {
@@ -204,14 +205,14 @@ form {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    width: 50%;
+    width: 66%;
 }
 
 .searchbar-container > form {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     gap: 10px;
 }
 
