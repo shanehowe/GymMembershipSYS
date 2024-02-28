@@ -33,14 +33,38 @@ function setMemberInactive($memberId)
 
 function getMembers()
 {
-        $pdo = getDatabaseConnection();
-        $result = $pdo->query("SELECT * FROM members");
-        while ($row = $result->fetch()) {
-            echo "<tr>";
-            echo "<td>" . $row["memberid"] . "</td>";
-            echo "<td>" . $row["FirstName"] . "</td>";
-            echo "<td>" . $row["LastName"] . "</td>";
-            echo "<td>" . $row["Status"] . "</td>";
-            echo "</tr>";
-        }
+    $pdo = getDatabaseConnection();
+    $result = $pdo->query("SELECT * FROM members ORDER BY FirstName, LastName ASC");
+    $memberArray = [];
+    while ($row = $result->fetch()) {
+        $associativeMemberArray = [
+            "memberid" => $row["memberid"],
+            "FirstName" => $row["FirstName"],
+            "LastName" => $row["LastName"],
+            "Status" => $row["Status"]
+        ];
+        array_push($memberArray, $associativeMemberArray);
+    }
+    return $memberArray;
+}
+
+function getMembersByName(string $combinedFirstAndLastName)
+{
+    $pdo = getDatabaseConnection();
+    $result = $pdo->prepare(
+        "SELECT * FROM members WHERE CONCAT_WS(' ', FirstName, LastName) LIKE :name ORDER BY FirstName, LastName ASC"
+    );
+    $result->bindValue(':name', '%' . $combinedFirstAndLastName . '%');
+    $result->execute();
+    $memberArray = [];
+    while ($row = $result->fetch()) {
+        $associativeMemberArray = [
+            "memberid" => $row["memberid"],
+            "FirstName" => $row["FirstName"],
+            "LastName" => $row["LastName"],
+            "Status" => $row["Status"]
+        ];
+        array_push($memberArray, $associativeMemberArray);
+    }
+    return $memberArray;
 }
