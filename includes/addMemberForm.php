@@ -12,7 +12,7 @@
             </div>
         <?php endif; ?>
         <h3>Add Member</h3>
-        <form action="add.php" method="post">
+        <form action="add.php" method="post" id="add-member-form">
             <div class="input-container">
                 <div class="input-inside-container">
                     <div>
@@ -64,7 +64,7 @@
                     <div>
                         <label for="dob-picker">Date of birth</label>
                     </div>
-                    <input type="date" name="dob" id="dob-picker">
+                    <input type="date" name="dob" id="dob-picker" class="text-input">
                 </div>
             </div>
 
