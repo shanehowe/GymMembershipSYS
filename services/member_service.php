@@ -3,6 +3,15 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/utils/database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/services/membership_type_service.php';
 
+function getMemberById($memberId)
+{
+    $pdo = getDatabaseConnection();
+    $stmt = $pdo->prepare("SELECT * FROM members WHERE MemberId = :memberId");
+    $stmt->bindParam(':memberId', $memberId);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
 function insertMember($firstName, $lastName, $email, $phone, $typeCode)
 {
     $pdo = getDatabaseConnection();
