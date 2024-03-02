@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/services/member_service.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.html";
 include $_SERVER['DOCUMENT_ROOT'] . "/includes/navbar.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/config.php";
 
 $members = getMembers();
 
@@ -36,7 +37,10 @@ if (isset($_POST['memberSearchSubmit'])) {
                 </thead>
                 <tbody>
                     <?php foreach($members as $member): ?>
-                    <tr class="member-table-row">
+                    <tr
+                        class="member-table-row" 
+                        data-href="<?php echo BASE_URL . '/views/members/view_member.php?id=' . $member['memberid']; ?>"
+                    >
                         <td><?php echo $member['memberid']; ?></td>
                         <td><?php echo $member['FirstName']; ?></td>
                         <td><?php echo $member['LastName']; ?></td>
