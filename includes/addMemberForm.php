@@ -59,13 +59,6 @@
                         <?php getActiveMembershipTypes(); ?>
                     </select>
                 </div>
-
-                <div class="input-inside-container">
-                    <div>
-                        <label for="dob-picker">Date of birth</label>
-                    </div>
-                    <input type="date" name="dob" id="dob-picker" class="text-input">
-                </div>
             </div>
 
             <div class="action-button-container">
