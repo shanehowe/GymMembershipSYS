@@ -8,6 +8,7 @@ $lastName = "";
 $email = "";
 $phone = "";
 $membershipType = "";
+$dateOfBirth = "";
 $formError = "";
 $formSuccess = "";
 
@@ -18,6 +19,7 @@ if (isset($_POST['submitMember'])) {
     $phone = $_POST['phone'];
     $membershipType = $_POST['membershipType'];
     $startDate = date("Y-m-d");
+    $dateOfBirth = $_POST['dob'];
 
     if (strlen($firstName) === 0) {
         $formError = "First name is required";
@@ -29,6 +31,8 @@ if (isset($_POST['submitMember'])) {
         $formError = "Phone is required";
     } else if (strlen($membershipType) === 0) {
         $formError = "Membership type is required";
+    } else if (strlen($dateOfBirth) === 0) {
+        $formError = "Date of birth is required";
     } else {
         try {
             insertMember($firstName, $lastName, $email, $phone, $membershipType);

@@ -282,3 +282,16 @@ th, td {
 .member-card-info-item-value {
     font-weight: 400;
 }
+
+.back-button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: medium;
+    align-self: start;
+    margin-left: 5%;
+    width: 10%;
+}

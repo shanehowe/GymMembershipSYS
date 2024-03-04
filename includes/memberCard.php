@@ -1,5 +1,6 @@
 <div class="main-content-container">
     <main class="main-content">
+        <button class="back-button" onclick="window.history.back()">Back</button>
         <h3>Member Details</h3>
         <div class="member-card">
             <div class="member-card-info">
