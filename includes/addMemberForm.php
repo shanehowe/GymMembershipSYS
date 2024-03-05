@@ -29,9 +29,7 @@
                     <input class="text-input" type="text" name="lastName" id="last-name-input"
                         placeholder="Last name..." value="<?php echo $lastName; ?>">
                 </div>
-            </div>
 
-            <div class="input-container">
                 <div class="input-inside-container">
                     <div>
                         <label for="email-input">Email</label>
@@ -47,9 +45,7 @@
                     <input class="text-input" type="text" name="phone" id="phone-input" placeholder="Phone number..."
                         value="<?php echo $phone; ?>">
                 </div>
-            </div>
 
-            <div class="input-container">
                 <div class="input-inside-container">
                     <div>
                         <label for="membership-type-select">Membership Type</label>
