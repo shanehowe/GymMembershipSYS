@@ -10,7 +10,4 @@
     <div class="sidebar-item">
         <a href="<?php echo BASE_URL;?>views/members/add.php">Add member</a>
     </div>
-    <div class="sidebar-item">
-        Edit member
-    </div>
 </aside>
