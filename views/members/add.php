@@ -2,6 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/services/member_service.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/services/membership_type_service.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/utils/validation.php';
 
 $firstName = "";
 $lastName = "";
@@ -12,23 +13,24 @@ $formError = "";
 $formSuccess = "";
 
 if (isset($_POST['submitMember'])) {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    $firstName = trim($_POST['firstName']);
+    $lastName = trim($_POST['lastName']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
     $membershipType = $_POST['membershipType'];
     $startDate = date("Y-m-d");
+    $validationResult = "";
 
-    if (strlen($firstName) === 0) {
-        $formError = "First name is required";
-    } else if (strlen($lastName) === 0) {
-        $formError = "Last name is required";
-    } else if (strlen($email) === 0) {
-        $formError = "Email is required";
-    } else if (strlen($phone) === 0) {
-        $formError = "Phone is required";
-    } else if (strlen($membershipType) === 0) {
-        $formError = "Membership type is required";
+    if (!validateName($firstName, $validationResult)) {
+        $formError = $validationResult;
+    } else if (!validateName($lastName, $validationResult)) {
+        $formError = $validationResult;
+    } else if (!validateEmail($email, $validationResult)) {
+        $formError = $validationResult;
+    } else if (!validatePhoneNumber($phone, $validationResult)) {
+        $formError = $validationResult;
+    } else if (!validateTypeCode($membershipType, $validationResult)) {
+        $formError = $validationResult;
     } else {
         try {
             insertMember($firstName, $lastName, $email, $phone, $membershipType);
