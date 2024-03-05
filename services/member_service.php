@@ -77,3 +77,17 @@ function getMembersByName(string $combinedFirstAndLastName)
     }
     return $memberArray;
 }
+
+function updateMember($memberId, $firstName, $lastName, $email, $phone)
+{
+    $pdo = getDatabaseConnection();
+    $stmt = $pdo->prepare(
+        "UPDATE members SET FirstName = :firstName, LastName = :lastName, Email = :email, Phone = :phone WHERE MemberId = :memberId"
+    );
+    $stmt->bindParam(':firstName', $firstName);
+    $stmt->bindParam(':lastName', $lastName);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':phone', $phone);
+    $stmt->bindParam(':memberId', $memberId);
+    $stmt->execute();
+}
