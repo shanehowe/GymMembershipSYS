@@ -45,7 +45,9 @@ if (isset($_POST['memberSearchSubmit'])) {
                         <td><?php echo $member['FirstName']; ?></td>
                         <td><?php echo $member['LastName']; ?></td>
                         <td><?php echo $member['Status']; ?></td>
-                        <td>Edit</td>
+                        <td>
+                            <a href="<?php echo BASE_URL;?>views/members/edit.php?id=<?php echo $member['memberid']; ?>">Edit Member</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
