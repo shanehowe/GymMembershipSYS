@@ -46,6 +46,14 @@
                     </div>
                     <div class="member-card-info-item">
                         <div class="member-card-info-item-label">
+                            <p>Membership Status</p>
+                        </div>
+                        <div class="member-card-info-item-value">
+                            <p><?php echo $member['Status']; ?></p>
+                        </div>
+                    </div>
+                    <div class="member-card-info-item">
+                        <div class="member-card-info-item-label">
                             <p>Membership Start Date</p>
                         </div>
                         <div class="member-card-info-item-value">
