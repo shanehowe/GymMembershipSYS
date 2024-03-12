@@ -32,10 +32,10 @@ function insertMember($firstName, $lastName, $email, $phone, $typeCode)
     $stmt->execute();
 }
 
-function setMemberInactive($memberId)
+function deleteMember($memberId)
 {
     $pdo = getDatabaseConnection();
-    $stmt = $pdo->prepare("UPDATE members SET Status = 'U' WHERE MemberId = :memberId");
+    $stmt = $pdo->prepare("DELETE FROM members WHERE MemberId = :memberId");
     $stmt->bindParam(':memberId', $memberId);
     $stmt->execute();
 }
