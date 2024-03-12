@@ -2,21 +2,27 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/config.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/services/member_service.php";
 
-$memberId;
-$memberInDatabase;
-if ($_SERVER['REQUEST_METHOD'] === "GET") {
-    $memberId = $_GET["id"];
-    if (!isset($memberId)) {
-        header("Location: " . BASE_URL . "/views/members/view.php");
-        exit();
-    }
-    $memberInDatabase = getMemberById((int) $memberId);
+function redirectToView($message, $isError)
+{
+    header("Location: " . BASE_URL . "/views/members/view.php?message=" . $message . "&isError=" . $isError);
+    exit();
 }
-?>
 
-<form action="delete.php" method="post">
-    <input type='hidden' value="<?php echo $memberId; ?>">
-    <p>Are you sure you what to delete <?php echo $memberInDatabase['FirstName'] . " " . $memberInDatabase["LastName"]; ?>?</p>
-    <input type="submit" value="Yes">
-    <input type="button" value="No, go back">
-</form>
+// Probably wrong to use get for deleting but works
+// Might change it need to ask anne
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    redirectToView("Invalid request method", true);
+}
+
+$memberId = $_GET['id'];
+$member = getMemberById($memberId);
+if (!$member) {
+    redirectToView("Member not found", true);
+}
+
+try {
+    deleteMember($memberId);
+    redirectToView("Member deleted successfully", false);
+} catch (PDOException $e) {
+    redirectToView("Failed to delete member", true);
+}
