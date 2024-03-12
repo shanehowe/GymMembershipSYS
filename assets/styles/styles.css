@@ -305,3 +305,39 @@ th, td {
     margin-left: 5%;
     width: 10%;
 }
+
+.mem-action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link-btn {
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    width: 33%;
+}
+
+.danger-btn {
+    border: 1px solid rgb(165, 4, 4);
+    background-color: rgb(165, 4, 4);
+    color: whitesmoke;
+}
+
+.danger-btn:hover {
+    border: 1px solid rgb(195, 1, 1);
+    background-color: rgb(195, 1, 1);
+    color: whitesmoke !important;
+}
+
+.edit-btn {
+    background-color: var(--button-bg-color);
+    color: #151c27 !important;
+}
+
+.edit-btn:hover {
+    background-color: var(--button-bg-color);
+    color: #151c27 !important;
+}
