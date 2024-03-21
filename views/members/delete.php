@@ -8,13 +8,12 @@ function redirectToView($message, $isError)
     exit();
 }
 
-// Probably wrong to use get for deleting but works
-// Might change it need to ask anne
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirectToView("Invalid request method", true);
 }
 
-$memberId = $_GET['id'];
+$memberId = $_POST['id'];
+
 $member = getMemberById($memberId);
 if (!$member) {
     redirectToView("Member not found", true);

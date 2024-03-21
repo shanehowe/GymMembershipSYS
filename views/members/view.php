@@ -64,9 +64,10 @@ if (isset($_POST['memberSearchSubmit'])) {
                             <td class="mem-action-buttons">
                                 <a class="link-btn edit-btn"
                                     href="<?php echo BASE_URL; ?>views/members/edit.php?id=<?php echo $member['memberid']; ?>">Edit</a>
-                                <a data-member-id="<?php echo $member['memberid']; ?>"
-                                    class="link-btn danger-btn"
-                                    data-href="<?php echo BASE_URL; ?>views/members/delete.php?id=<?php echo $member['memberid']; ?>">Delete</a>
+                                <form class="delete-form" action="<?php echo BASE_URL; ?>views/members/delete.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $member['memberid']; ?>">
+                                    <button type="submit" class="delete-btn">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

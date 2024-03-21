@@ -317,19 +317,22 @@ th, td {
     text-decoration: none;
     display: inline-block;
     border-radius: 8px;
-    width: 33%;
+    width: 25%;
 }
 
-.danger-btn {
-    border: 1px solid rgb(165, 4, 4);
-    background-color: rgb(165, 4, 4);
-    color: whitesmoke;
-}
-
-.danger-btn:hover {
-    border: 1px solid rgb(195, 1, 1);
-    background-color: rgb(195, 1, 1);
-    color: whitesmoke !important;
+.delete-btn {
+    background-color: #6d0101;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    width: max-content;
 }
 
 .edit-btn {
