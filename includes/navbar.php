@@ -12,7 +12,7 @@
         </div>
 
         <div class="nav-item">
-            <p>Classes</p>
+            <a href="<?php echo BASE_URL . '/views/classes/view.php' ?>">Classes</a>
         </div>
     </div>
 </div>
