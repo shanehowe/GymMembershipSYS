@@ -10,4 +10,7 @@
     <div class="sidebar-item">
         <a href="<?php echo BASE_URL;?>views/classes/add.php">Add class</a>
     </div>
+    <div class="sidebar-item">
+        <a href="<?php echo BASE_URL;?>views/classes/book.php">Book class</a>
+    </div>
 </aside>
